@@ -12,3 +12,4 @@ reweighted-ws/lib/
 reweighted-ws/local/
 reweighted-ws/man/
 reweighted-ws/test/
+*.sublime*
