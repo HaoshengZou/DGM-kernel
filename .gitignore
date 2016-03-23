@@ -1,0 +1,14 @@
+*.pyc
+.*.swp
+*.h5
+*.state
+reweighted-ws/data/*.h5
+reweighted-ws/data/*.pkl.gz
+reweighted-ws/notebooks/.ipynb_checkpoints/
+reweighted-ws/*/output/*
+reweighted-ws/bin/
+reweighted-ws/include/
+reweighted-ws/lib/
+reweighted-ws/local/
+reweighted-ws/man/
+reweighted-ws/test/
