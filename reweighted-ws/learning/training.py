@@ -241,7 +241,7 @@ class Trainer(TrainerBase):
         self.logger.info("lr_p=%3.1e, lr_q=%3.1e, lr_s=%3.1e, lr_decay=%5.1e layer_discount=%4.2f" %
             (self.learning_rate_p, self.learning_rate_q, self.learning_rate_s, self.lr_decay, self.layer_discount))
 
-        epoch = 0
+        epoch = 1
         # Perform first epoch
         saved_step_monitors = self.step_monitors
         self.step_monitors = self.first_epoch_step_monitors + self.step_monitors
@@ -251,7 +251,7 @@ class Trainer(TrainerBase):
             m.on_iter(model)
         
 
-        self.logger.info("Starting epoch 0...")
+        self.logger.info("Starting epoch 1...")
         L = self.perform_epoch()
         self.step_monitors = saved_step_monitors
 
@@ -302,7 +302,7 @@ class Trainer(TrainerBase):
 
         LL_epoch /= n_batches
 
-        self.logger.info("Completed epoch %d in %.1fs (%.1fms/step). Calling epoch_monitors..." % (epoch+1, t, t/n_batches*1000))
+        self.logger.info("Completed epoch %d in %.1fs (%.1fms/step). Calling epoch_monitors..." % (epoch, t, t/n_batches*1000))
         for m in self.epoch_monitors:
             m.on_iter(self.model)
 
