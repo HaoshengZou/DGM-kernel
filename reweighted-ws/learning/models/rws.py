@@ -309,8 +309,8 @@ class LayerStack(Model):
         log_PX, w, log_p, log_q, KL, Hp, Hq = self.log_likelihood(X, Y, n_samples=n_samples)
         
         batch_log_PX = T.sum(log_PX)
-        cost_p = T.sum(T.sum(log_p*w, axis=1))
-        cost_q = T.sum(T.sum(log_q*w, axis=1))
+        cost_p = T.sum(log_p * w)
+        cost_q = T.sum(log_q * w)
 
         gradients = OrderedDict()
         for nl, layer in enumerate(self.p_layers):
