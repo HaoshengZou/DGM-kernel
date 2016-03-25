@@ -54,7 +54,7 @@ def run_experiment(args):
     q_layer, q_top = layer_models[args.q_model]
 
     # n_samples to evaluate model
-    n_samples_epoch = [1, 5, 25, 100]
+    n_samples_epoch = [1, 5] #, 25, 100]
     n_samples_final = [1, 5, 10, 25, 100, 500, 1000, 10000, 100000]
     if (args.p_model in ['darn', 'nade']) or (args.q_model in ['darn', 'nade']):
         n_samples_epoch = [1, 5, 25]
