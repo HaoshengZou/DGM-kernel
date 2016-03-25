@@ -311,6 +311,7 @@ class LayerStack(Model):
         batch_log_PX = T.sum(log_PX)
         cost_p = T.sum(log_p * w)
         cost_q = T.sum(log_q * w)
+        print "log_p.shape", log_p.shape
 
         gradients = OrderedDict()
         for nl, layer in enumerate(self.p_layers):
