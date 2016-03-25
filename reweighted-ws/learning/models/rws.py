@@ -312,6 +312,7 @@ class LayerStack(Model):
         cost_p = T.sum(log_p * w)
         cost_q = T.sum(log_q * w)
         print "log_p.shape", log_p.shape
+        print "can you print something!?"
 
         gradients = OrderedDict()
         for nl, layer in enumerate(self.p_layers):
